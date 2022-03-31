@@ -1,7 +1,7 @@
 {
   "name": "nizerin/alipay-global",
   "type": "library",
-  "description": "Alipay Global Third Party SDK",
+  "description": "Alipay Global Third Party SDK, 支付宝 国际版 SDK for PHP",
   "keywords": [
     "alipay-global",
     "alipay",
