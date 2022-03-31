@@ -1,0 +1,29 @@
+{
+  "name": "nizerin/alipay-global",
+  "type": "library",
+  "description": "Alipay Global Third Party SDK",
+  "keywords": [
+    "alipay-global",
+    "alipay",
+    "alipay-sdk",
+    "sdk"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Zelin Ning",
+      "email": "i@nizer.in"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-openssl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "NiZerin\\": "src"
+    }
+  }
+}
