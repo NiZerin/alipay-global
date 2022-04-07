@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Model;
 
 class Env
@@ -14,7 +24,7 @@ class Env
     public $extendInfo;
 
     /**
-     * @return String
+     * @return string
      */
     public function getTerminalType()
     {
@@ -22,7 +32,7 @@ class Env
     }
 
     /**
-     * @param String $terminalType
+     * @param string $terminalType
      */
     public function setTerminalType($terminalType)
     {
@@ -46,7 +56,7 @@ class Env
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getUserAgent()
     {
@@ -54,7 +64,7 @@ class Env
     }
 
     /**
-     * @param String $userAgent
+     * @param string $userAgent
      */
     public function setUserAgent($userAgent)
     {
@@ -62,7 +72,7 @@ class Env
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getDeviceTokenId()
     {
@@ -70,7 +80,7 @@ class Env
     }
 
     /**
-     * @param String $deviceTokenId
+     * @param string $deviceTokenId
      */
     public function setDeviceTokenId($deviceTokenId)
     {
@@ -78,7 +88,7 @@ class Env
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getClientIp()
     {
@@ -86,7 +96,7 @@ class Env
     }
 
     /**
-     * @param String $clientIp
+     * @param string $clientIp
      */
     public function setClientIp($clientIp)
     {
@@ -94,7 +104,7 @@ class Env
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getCookieId()
     {
@@ -102,7 +112,7 @@ class Env
     }
 
     /**
-     * @param String $cookieId
+     * @param string $cookieId
      */
     public function setCookieId($cookieId)
     {
@@ -110,7 +120,7 @@ class Env
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getStoreTerminalId()
     {
@@ -118,7 +128,7 @@ class Env
     }
 
     /**
-     * @param String $storeTerminalId
+     * @param string $storeTerminalId
      */
     public function setStoreTerminalId($storeTerminalId)
     {
@@ -126,7 +136,7 @@ class Env
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getStoreTerminalRequestTime()
     {
@@ -134,7 +144,7 @@ class Env
     }
 
     /**
-     * @param String $storeTerminalRequestTime
+     * @param string $storeTerminalRequestTime
      */
     public function setStoreTerminalRequestTime($storeTerminalRequestTime)
     {
@@ -142,7 +152,7 @@ class Env
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getExtendInfo()
     {
@@ -150,7 +160,7 @@ class Env
     }
 
     /**
-     * @param String $extendInfo
+     * @param string $extendInfo
      */
     public function setExtendInfo($extendInfo)
     {

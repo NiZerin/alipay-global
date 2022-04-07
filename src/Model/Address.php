@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Model;
 
 class Address
@@ -12,7 +22,7 @@ class Address
     public $label;
 
     /**
-     * @return String
+     * @return string
      */
     public function getRegion()
     {
@@ -20,7 +30,7 @@ class Address
     }
 
     /**
-     * @param String $region
+     * @param string $region
      */
     public function setRegion($region)
     {
@@ -28,7 +38,7 @@ class Address
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getState()
     {
@@ -36,7 +46,7 @@ class Address
     }
 
     /**
-     * @param String $state
+     * @param string $state
      */
     public function setState($state)
     {
@@ -44,7 +54,7 @@ class Address
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getCity()
     {
@@ -92,7 +102,7 @@ class Address
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getZipCode()
     {
@@ -100,7 +110,7 @@ class Address
     }
 
     /**
-     * @param String $zipCode
+     * @param string $zipCode
      */
     public function setZipCode($zipCode)
     {

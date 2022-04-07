@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Model;
 
 class Order
@@ -14,7 +24,7 @@ class Order
     public $extendInfo;
 
     /**
-     * @return String
+     * @return string
      */
     public function getReferenceOrderId()
     {
@@ -22,7 +32,7 @@ class Order
     }
 
     /**
-     * @param String $referenceOrderId
+     * @param string $referenceOrderId
      */
     public function setReferenceOrderId($referenceOrderId)
     {
@@ -30,7 +40,7 @@ class Order
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getOrderDescription()
     {
@@ -38,7 +48,7 @@ class Order
     }
 
     /**
-     * @param String $orderDescription
+     * @param string $orderDescription
      */
     public function setOrderDescription($orderDescription)
     {

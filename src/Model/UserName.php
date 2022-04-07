@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Model;
 
 class UserName
@@ -9,7 +19,7 @@ class UserName
     public $fullName;
 
     /**
-     * @return String
+     * @return string
      */
     public function getFirstName()
     {
@@ -17,7 +27,7 @@ class UserName
     }
 
     /**
-     * @param String $firstName
+     * @param string $firstName
      */
     public function setFirstName($firstName)
     {
@@ -25,7 +35,7 @@ class UserName
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getMiddleName()
     {
@@ -33,7 +43,7 @@ class UserName
     }
 
     /**
-     * @param String $middleName
+     * @param string $middleName
      */
     public function setMiddleName($middleName)
     {
@@ -41,7 +51,7 @@ class UserName
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getLastName()
     {
@@ -49,7 +59,7 @@ class UserName
     }
 
     /**
-     * @param String $lastName
+     * @param string $lastName
      */
     public function setLastName($lastName)
     {
@@ -57,7 +67,7 @@ class UserName
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getFullName()
     {
@@ -65,7 +75,7 @@ class UserName
     }
 
     /**
-     * @param String $fullName
+     * @param string $fullName
      */
     public function setFullName($fullName)
     {

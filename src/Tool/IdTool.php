@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Tool;
 
 class IdTool
@@ -10,6 +19,7 @@ class IdTool
     public static function CreateId()
     {
         list($ms) = explode(' ', microtime());
+
         return date('YmdHis') . ($ms * 1000000) . rand(00, 99);
     }
 

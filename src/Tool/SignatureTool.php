@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Tool;
 
 class SignatureTool
@@ -16,7 +25,8 @@ class SignatureTool
     public static function sign($httpMethod, $path, $clientId, $reqTime, $content, $merchantPrivateKey)
     {
         $signContent = self::genSignContent($httpMethod, $path, $clientId, $reqTime, $content);
-        $signValue = self::signWithSHA256RSA($signContent, $merchantPrivateKey);
+        $signValue   = self::signWithSHA256RSA($signContent, $merchantPrivateKey);
+
         return urlencode($signValue);
     }
 
@@ -33,6 +43,7 @@ class SignatureTool
     public static function verify($httpMethod, $path, $clientId, $rspTime, $rspBody, $signature, $alipayPublicKey)
     {
         $rspContent = self::genSignContent($httpMethod, $path, $clientId, $rspTime, $rspBody);
+
         return self::verifySignatureWithSHA256RSA($rspContent, $signature, $alipayPublicKey);
     }
 
@@ -46,7 +57,7 @@ class SignatureTool
      */
     private static function genSignContent($httpMethod, $path, $clientId, $timeString, $content)
     {
-        return $httpMethod . " " . $path . "\n" . $clientId . "." . $timeString . "." . $content;
+        return $httpMethod . ' ' . $path . "\n" . $clientId . '.' . $timeString . '.' . $content;
     }
 
     /**
@@ -61,6 +72,7 @@ class SignatureTool
             "\n-----END RSA PRIVATE KEY-----";
 
         openssl_sign($signContent, $signValue, $priKey, OPENSSL_ALGO_SHA256);
+
         return base64_encode($signValue);
     }
 
@@ -75,9 +87,9 @@ class SignatureTool
         $pubKey = "-----BEGIN PUBLIC KEY-----\n" .
             wordwrap($alipayPublicKey, 64, "\n", true) .
             "\n-----END PUBLIC KEY-----";
-        if (strstr($rspSignValue, "=")
-            || strstr($rspSignValue, "+")
-            || strstr($rspSignValue, "/")
+        if (strstr($rspSignValue, '=')
+            || strstr($rspSignValue, '+')
+            || strstr($rspSignValue, '/')
             || $rspSignValue == base64_encode(base64_decode($rspSignValue))) {
             $originalRspSignValue = base64_decode($rspSignValue);
         } else {

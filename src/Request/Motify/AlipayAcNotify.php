@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Request\Motify;
 
 use NiZerin\Model\NotifyPaymentRequest;
@@ -20,6 +29,7 @@ class AlipayAcNotify
         if (preg_match('/signature=(?<signature>.*?)(?:$|,)/', $_SERVER['HTTP_SIGNATURE'], $matches)) {
             $notifyPaymentRequest->setSignature($matches['signature']);
         }
+
         return $notifyPaymentRequest;
     }
 
@@ -35,9 +45,9 @@ class AlipayAcNotify
      * @param array $params
      * @return void
      */
-    public function sendNotifyResponseWithRSA(array $params = array(
+    public function sendNotifyResponseWithRSA(array $params = [
         'merchantPrivateKey' => '',
-    ))
+    ])
     {
         $reqTime = date('c', time());
         $content = '{"result":{"resultCode":"SUCCESS","resultMessage":"success","resultStatus":"S"}}';

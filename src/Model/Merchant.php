@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Model;
 
 class Merchant
@@ -13,7 +23,7 @@ class Merchant
     public $merchantType;
 
     /**
-     * @return String
+     * @return string
      */
     public function getReferenceMerchantId()
     {
@@ -21,7 +31,7 @@ class Merchant
     }
 
     /**
-     * @param String $referenceMerchantId
+     * @param string $referenceMerchantId
      */
     public function setReferenceMerchantId($referenceMerchantId)
     {
@@ -29,7 +39,7 @@ class Merchant
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getMerchantMCC()
     {
@@ -37,7 +47,7 @@ class Merchant
     }
 
     /**
-     * @param String $merchantMCC
+     * @param string $merchantMCC
      */
     public function setMerchantMCC($merchantMCC)
     {
@@ -45,7 +55,7 @@ class Merchant
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getMerchantName()
     {
@@ -53,7 +63,7 @@ class Merchant
     }
 
     /**
-     * @param String $merchantName
+     * @param string $merchantName
      */
     public function setMerchantName($merchantName)
     {
@@ -61,7 +71,7 @@ class Merchant
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getMerchantDisplayName()
     {
@@ -69,7 +79,7 @@ class Merchant
     }
 
     /**
-     * @param String $merchantDisplayName
+     * @param string $merchantDisplayName
      */
     public function setMerchantDisplayName($merchantDisplayName)
     {
@@ -93,7 +103,7 @@ class Merchant
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getMerchantRegisterDate()
     {
@@ -101,7 +111,7 @@ class Merchant
     }
 
     /**
-     * @param String $merchantRegisterDate
+     * @param string $merchantRegisterDate
      */
     public function setMerchantRegisterDate($merchantRegisterDate)
     {

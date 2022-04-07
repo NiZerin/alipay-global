@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Model;
 
 class Store
@@ -13,7 +23,7 @@ class Store
     public $storePhoneNo;
 
     /**
-     * @return String
+     * @return string
      */
     public function getReferenceStoreId()
     {
@@ -21,7 +31,7 @@ class Store
     }
 
     /**
-     * @param String $referenceStoreId
+     * @param string $referenceStoreId
      */
     public function setReferenceStoreId($referenceStoreId)
     {
@@ -29,7 +39,7 @@ class Store
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getStoreName()
     {
@@ -37,7 +47,7 @@ class Store
     }
 
     /**
-     * @param String $storeName
+     * @param string $storeName
      */
     public function setStoreName($storeName)
     {
@@ -45,7 +55,7 @@ class Store
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getStoreMCC()
     {
@@ -53,7 +63,7 @@ class Store
     }
 
     /**
-     * @param String $storeMCC
+     * @param string $storeMCC
      */
     public function setStoreMCC($storeMCC)
     {
@@ -61,7 +71,7 @@ class Store
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getStoreDisplayName()
     {
@@ -69,7 +79,7 @@ class Store
     }
 
     /**
-     * @param String $storeDisplayName
+     * @param string $storeDisplayName
      */
     public function setStoreDisplayName($storeDisplayName)
     {
@@ -77,7 +87,7 @@ class Store
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getStoreTerminalId()
     {
@@ -85,7 +95,7 @@ class Store
     }
 
     /**
-     * @param String $storeTerminalId
+     * @param string $storeTerminalId
      */
     public function setStoreTerminalId($storeTerminalId)
     {
@@ -93,7 +103,7 @@ class Store
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getStoreOperatorId()
     {
@@ -101,7 +111,7 @@ class Store
     }
 
     /**
-     * @param String $storeOperatorId
+     * @param string $storeOperatorId
      */
     public function setStoreOperatorId($storeOperatorId)
     {
@@ -125,7 +135,7 @@ class Store
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getStorePhoneNo()
     {
@@ -133,7 +143,7 @@ class Store
     }
 
     /**
-     * @param String $storePhoneNo
+     * @param string $storePhoneNo
      */
     public function setStorePhoneNo($storePhoneNo)
     {

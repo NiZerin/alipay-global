@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin;
 
 use Exception;
@@ -25,7 +34,7 @@ use NiZerin\Tool\SignatureTool;
 
 class AliPayGlobal
 {
-    const PATH_PREFIX = '/ams/{sandbox}api/v1/';
+    public const PATH_PREFIX = '/ams/{sandbox}api/v1/';
 
     private $alipayClient;
     private $client_id;
@@ -38,18 +47,18 @@ class AliPayGlobal
      */
     public function __construct($params)
     {
-        $params = array_merge(array(
-            'client_id' => '',
-            'endpoint_area' => 'ASIA',
+        $params = array_merge([
+            'client_id'          => '',
+            'endpoint_area'      => 'ASIA',
             'merchantPrivateKey' => '',
-            'alipayPublicKey' => '',
-            'is_sandbox' => false,
-        ), $params);
-        $this->alipayPublicKey = $params['alipayPublicKey'];
+            'alipayPublicKey'    => '',
+            'is_sandbox'         => false,
+        ], $params);
+        $this->alipayPublicKey    = $params['alipayPublicKey'];
         $this->merchantPrivateKey = $params['merchantPrivateKey'];
-        $this->client_id = $params['client_id'];
-        $this->is_sandbox = $params['is_sandbox'];
-        $this->alipayClient = new AcAlipayClient(
+        $this->client_id          = $params['client_id'];
+        $this->is_sandbox         = $params['is_sandbox'];
+        $this->alipayClient       = new AcAlipayClient(
             constant(Endpoint::class . '::' . $params['endpoint_area']),
             $this->merchantPrivateKey,
             $this->alipayPublicKey
@@ -72,30 +81,30 @@ class AliPayGlobal
      */
     public function payCashier($params)
     {
-        $params = array_merge(array(
+        $params = array_merge([
             'notify_url' => null,
             'return_url' => null,
-            'amount' => array(
+            'amount'     => [
                 'currency' => null,
-                'value' => null,
-            ),
-            'order' => array(
-                'id' => null,
-                'desc' => null,
-                'extend_info' => array(
-                    'china_extra_trans_info' => array(
+                'value'    => null,
+            ],
+            'order' => [
+                'id'          => null,
+                'desc'        => null,
+                'extend_info' => [
+                    'china_extra_trans_info' => [
                         'business_type' => null,
-                    ),
-                ),
-            ),
-            'payment_request_id' => null,
-            'settlement_strategy' => array(
+                    ],
+                ],
+            ],
+            'payment_request_id'  => null,
+            'settlement_strategy' => [
                 'currency' => null,
-            ),
+            ],
             'terminal_type' => null,
-            'os_type' => null,
-            'os_version' => null,
-        ), $params);
+            'os_type'       => null,
+            'os_version'    => null,
+        ], $params);
 
         $alipayPayRequest = new AlipayPayRequest();
         $alipayPayRequest->setPath($this->getPath('payments/pay'));
@@ -147,9 +156,9 @@ class AliPayGlobal
      */
     public function getNotify()
     {
-        $alipayAcNotify = new AlipayAcNotify();
+        $alipayAcNotify       = new AlipayAcNotify();
         $notifyPaymentRequest = $alipayAcNotify->getNotifyPaymentRequest();
-        $result = SignatureTool::verify(
+        $result               = SignatureTool::verify(
             $notifyPaymentRequest->getHttpMethod(),
             $_SERVER['PHP_SELF'],
             $notifyPaymentRequest->getClientId(),
@@ -158,9 +167,10 @@ class AliPayGlobal
             $notifyPaymentRequest->getSignature(),
             $this->alipayPublicKey
         );
-        if ($result === 0) {
+        if (0 === $result) {
             throw new Exception('Invalid Signature');
         }
+
         return $notifyPaymentRequest;
     }
 
@@ -179,9 +189,9 @@ class AliPayGlobal
     public function sendNotifyResponseWithRSA()
     {
         $alipayAcNotify = new AlipayAcNotify();
-        $alipayAcNotify->sendNotifyResponseWithRSA(array(
+        $alipayAcNotify->sendNotifyResponseWithRSA([
             'merchantPrivateKey' => $this->merchantPrivateKey,
-        ));
+        ]);
     }
 
     /**
@@ -191,16 +201,16 @@ class AliPayGlobal
      */
     public function authConsult($params)
     {
-        $params = array_merge(array(
+        $params = array_merge([
             'customer_belongs_to' => null, // *
-            'auth_client_id' => null,
-            'auth_redirect_url' => null, // *
-            'scopes' => null, // *
-            'auth_state' => null, // *
-            'terminal_type' => null, // *
-            'os_type' => null,
-            'os_version' => null,
-        ), $params);
+            'auth_client_id'      => null,
+            'auth_redirect_url'   => null, // *
+            'scopes'              => null, // *
+            'auth_state'          => null, // *
+            'terminal_type'       => null, // *
+            'os_type'             => null,
+            'os_version'          => null,
+        ], $params);
         $alipayAuthConsultRequest = new AlipayAuthConsultRequest();
         $alipayAuthConsultRequest->setPath($this->getPath('authorizations/consult'));
         $alipayAuthConsultRequest->setClientId($this->client_id);
@@ -224,12 +234,12 @@ class AliPayGlobal
      */
     public function authApplyToken($params)
     {
-        $params = array_merge(array(
-            'grant_type' => null, // *
+        $params = array_merge([
+            'grant_type'          => null, // *
             'customer_belongs_to' => null,
-            'auth_code' => null, // *
-            'refresh_token' => null, // *
-        ), $params);
+            'auth_code'           => null, // *
+            'refresh_token'       => null, // *
+        ], $params);
 
         $AlipayAuthApplyTokenRequest = new AlipayAuthApplyTokenRequest();
         $AlipayAuthApplyTokenRequest->setPath($this->getPath('authorizations/applyToken'));
@@ -250,60 +260,60 @@ class AliPayGlobal
      */
     public function payAgreement($params)
     {
-        $params = array_merge(array(
+        $params = array_merge([
             'notify_url' => null,
             'return_url' => null,
-            'amount' => array(
+            'amount'     => [
                 'currency' => null,
-                'value' => null,
-            ),
-            'order' => array(
-                'id' => null,
-                'desc' => null,
-                'extend_info' => array(
-                    'china_extra_trans_info' => array(
+                'value'    => null,
+            ],
+            'order' => [
+                'id'          => null,
+                'desc'        => null,
+                'extend_info' => [
+                    'china_extra_trans_info' => [
                         'business_type' => null,
-                    ),
-                ),
-            ),
-            'goods' => array(
-                array(
-                    'id' => null,
-                    'name' => null,
-                    'category' => null,
-                    'brand' => null,
+                    ],
+                ],
+            ],
+            'goods' => [
+                [
+                    'id'          => null,
+                    'name'        => null,
+                    'category'    => null,
+                    'brand'       => null,
                     'unit_amount' => null,
-                    'quantity' => null,
-                    'sku_name' => null,
-                ),
-            ),
-            'merchant' => array(
-                'MCC' => null,
-                'name' => null,
-                'display_name' => null,
-                'address' => null,
+                    'quantity'    => null,
+                    'sku_name'    => null,
+                ],
+            ],
+            'merchant' => [
+                'MCC'           => null,
+                'name'          => null,
+                'display_name'  => null,
+                'address'       => null,
                 'register_date' => null,
-                'store' => null,
-                'type' => null,
-            ),
-            'buyer' => array(
-                'id' => null,
-                'name' => array(
+                'store'         => null,
+                'type'          => null,
+            ],
+            'buyer' => [
+                'id'   => null,
+                'name' => [
                     'first_name' => null,
-                    'last_name' => null,
-                ),
+                    'last_name'  => null,
+                ],
                 'phone_no' => null,
-                'email' => null,
-            ),
+                'email'    => null,
+            ],
             'payment_request_id' => null,
-            'payment_method' => array(
+            'payment_method'     => [
                 'payment_method_type' => null,
-                'payment_method_id' => null,
-            ),
-            'settlement_strategy' => array(
+                'payment_method_id'   => null,
+            ],
+            'settlement_strategy' => [
                 'currency' => null,
-            ),
-        ), $params);
+            ],
+        ], $params);
 
         $alipayPayRequest = new AlipayPayRequest();
         $alipayPayRequest->setPath($this->getPath('payments/pay'));
@@ -342,7 +352,7 @@ class AliPayGlobal
         $env->setOsType($params['os_type']);
         $order->setEnv($env);
 
-        $goodsArr = array();
+        $goodsArr = [];
         if (!empty($params['goods'])) {
             foreach ($params['goods'] as $good) {
                 $goods = new Goods();

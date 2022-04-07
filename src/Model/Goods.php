@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Model;
 
 class Goods
@@ -12,7 +22,7 @@ class Goods
     public $goodsSkuName;
 
     /**
-     * @return String
+     * @return string
      */
     public function getReferenceGoodsId()
     {
@@ -20,7 +30,7 @@ class Goods
     }
 
     /**
-     * @param String $referenceGoodsId
+     * @param string $referenceGoodsId
      */
     public function setReferenceGoodsId($referenceGoodsId)
     {
@@ -28,7 +38,7 @@ class Goods
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getGoodsName()
     {
@@ -36,7 +46,7 @@ class Goods
     }
 
     /**
-     * @param String $goodsName
+     * @param string $goodsName
      */
     public function setGoodsName($goodsName)
     {
@@ -44,7 +54,7 @@ class Goods
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getGoodsCategory()
     {
@@ -52,7 +62,7 @@ class Goods
     }
 
     /**
-     * @param String $goodsCategory
+     * @param string $goodsCategory
      */
     public function setGoodsCategory($goodsCategory)
     {
@@ -60,7 +70,7 @@ class Goods
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getGoodsBrand()
     {
@@ -68,7 +78,7 @@ class Goods
     }
 
     /**
-     * @param String $goodsBrand
+     * @param string $goodsBrand
      */
     public function setGoodsBrand($goodsBrand)
     {
@@ -92,7 +102,7 @@ class Goods
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getGoodsQuantity()
     {
@@ -100,7 +110,7 @@ class Goods
     }
 
     /**
-     * @param String $goodsQuantity
+     * @param string $goodsQuantity
      */
     public function setGoodsQuantity($goodsQuantity)
     {
@@ -108,7 +118,7 @@ class Goods
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getGoodsSkuName()
     {
@@ -116,7 +126,7 @@ class Goods
     }
 
     /**
-     * @param String $goodsSkuName
+     * @param string $goodsSkuName
      */
     public function setGoodsSkuName($goodsSkuName)
     {

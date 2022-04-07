@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Model;
 
 class ChinaExtraTransInfo
@@ -19,7 +29,7 @@ class ChinaExtraTransInfo
         return $this->businessType;
     }
 
-    public function setBusinessType(String $businessType)
+    public function setBusinessType(string $businessType)
     {
         $this->businessType = $businessType;
     }
@@ -29,7 +39,7 @@ class ChinaExtraTransInfo
         return $this->flightNumber;
     }
 
-    public function setFlightNumber(String $flightNumber)
+    public function setFlightNumber(string $flightNumber)
     {
         $this->flightNumber = $flightNumber;
     }
@@ -39,7 +49,7 @@ class ChinaExtraTransInfo
         return $this->departureTime;
     }
 
-    public function setDepartureTime(String $departureTime)
+    public function setDepartureTime(string $departureTime)
     {
         $this->departureTime = $departureTime;
     }
@@ -49,7 +59,7 @@ class ChinaExtraTransInfo
         return $this->hotelName;
     }
 
-    public function setHotelName(String $hotelName)
+    public function setHotelName(string $hotelName)
     {
         $this->hotelName = $hotelName;
     }
@@ -59,7 +69,7 @@ class ChinaExtraTransInfo
         return $this->checkinTime;
     }
 
-    public function setCheckinTime(String $checkinTime)
+    public function setCheckinTime(string $checkinTime)
     {
         $this->checkinTime = $checkinTime;
     }
@@ -69,7 +79,7 @@ class ChinaExtraTransInfo
         return $this->checkoutTime;
     }
 
-    public function setCheckoutTime(String $checkoutTime)
+    public function setCheckoutTime(string $checkoutTime)
     {
         $this->checkoutTime = $checkoutTime;
     }
@@ -79,7 +89,7 @@ class ChinaExtraTransInfo
         return $this->admissionNoticeUrl;
     }
 
-    public function setAdmissionNoticeUrl(String $admissionNoticeUrl)
+    public function setAdmissionNoticeUrl(string $admissionNoticeUrl)
     {
         $this->admissionNoticeUrl = $admissionNoticeUrl;
     }
@@ -89,7 +99,7 @@ class ChinaExtraTransInfo
         return $this->totalQuantity;
     }
 
-    public function setTotalQuantity(String $totalQuantity)
+    public function setTotalQuantity(string $totalQuantity)
     {
         $this->totalQuantity = $totalQuantity;
     }
@@ -99,7 +109,7 @@ class ChinaExtraTransInfo
         return $this->goodsInfo;
     }
 
-    public function setGoodsInfo(String $goodsInfo)
+    public function setGoodsInfo(string $goodsInfo)
     {
         $this->goodsInfo = $goodsInfo;
     }
@@ -109,7 +119,7 @@ class ChinaExtraTransInfo
         return $this->otherBusinessType;
     }
 
-    public function setOtherBusinessType(String $otherBusinessType)
+    public function setOtherBusinessType(string $otherBusinessType)
     {
         $this->otherBusinessType = $otherBusinessType;
     }

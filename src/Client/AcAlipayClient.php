@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Client;
 
 use NiZerin\Model\HttpRpcResult;
@@ -45,26 +54,26 @@ class AcAlipayClient extends BaseAlipayClient
 
         $rspContent = curl_exec($curl);
 
-        if (curl_getinfo($curl, CURLINFO_HTTP_CODE) != '200') {
+        if ('200' != curl_getinfo($curl, CURLINFO_HTTP_CODE)) {
             return null;
         }
 
-        $headerSize = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
+        $headerSize    = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
         $headerContent = substr($rspContent, 0, $headerSize);
-        $rspBody = substr($rspContent, $headerSize);
+        $rspBody       = substr($rspContent, $headerSize);
 
         $httpRpcResult = new HttpRpcResult();
         $httpRpcResult->setRspBody($rspBody);
 
         $headArr = explode("\r\n", $headerContent);
         foreach ($headArr as $headerItem) {
-            if (strstr($headerItem, "response-time") || strstr($headerItem, "signature")) {
+            if (strstr($headerItem, 'response-time') || strstr($headerItem, 'signature')) {
                 $responseTime = $this->getResponseTime($headerItem);
-                if (isset($responseTime) && $responseTime != null) {
+                if (isset($responseTime) && null != $responseTime) {
                     $httpRpcResult->setRspTime(trim($responseTime));
                 } else {
                     $signatureValue = $this->getResponseSignature($headerItem);
-                    if (isset($signatureValue) && $signatureValue != null) {
+                    if (isset($signatureValue) && null != $signatureValue) {
                         $httpRpcResult->setRspSign($signatureValue);
                     }
                 }
@@ -82,10 +91,12 @@ class AcAlipayClient extends BaseAlipayClient
      */
     private function getResponseTime($headerItem)
     {
-        if (strstr($headerItem, "response-time")) {
-            $startIndex = strpos($headerItem, ":") + 1;
+        if (strstr($headerItem, 'response-time')) {
+            $startIndex = strpos($headerItem, ':') + 1;
+
             return substr($headerItem, $startIndex);
         }
+
         return null;
     }
 
@@ -95,10 +106,12 @@ class AcAlipayClient extends BaseAlipayClient
      */
     private function getResponseSignature($headerItem)
     {
-        if (strstr($headerItem, "signature")) {
-            $startIndex = strrpos($headerItem, "=") + 1;
+        if (strstr($headerItem, 'signature')) {
+            $startIndex = strrpos($headerItem, '=') + 1;
+
             return substr($headerItem, $startIndex);
         }
+
         return null;
     }
 }

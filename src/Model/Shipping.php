@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the nizerin/alipay-global.
+ *
+ * (c) nizerin <i@nizer.in>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace NiZerin\Model;
 
 class Shipping
@@ -9,7 +19,7 @@ class Shipping
     public $shippingPhoneNo;
 
     /**
-     * @return String
+     * @return string
      */
     public function getShippingName()
     {
@@ -17,7 +27,7 @@ class Shipping
     }
 
     /**
-     * @param String $shippingName
+     * @param string $shippingName
      */
     public function setShippingName($shippingName)
     {
@@ -41,7 +51,7 @@ class Shipping
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getShippingCarrier()
     {
@@ -49,7 +59,7 @@ class Shipping
     }
 
     /**
-     * @param String $shippingCarrier
+     * @param string $shippingCarrier
      */
     public function setShippingCarrier($shippingCarrier)
     {
@@ -57,7 +67,7 @@ class Shipping
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getShippingPhoneNo()
     {
@@ -65,7 +75,7 @@ class Shipping
     }
 
     /**
-     * @param String $shippingPhoneNo
+     * @param string $shippingPhoneNo
      */
     public function setShippingPhoneNo($shippingPhoneNo)
     {
