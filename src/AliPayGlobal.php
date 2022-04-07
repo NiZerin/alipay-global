@@ -76,8 +76,8 @@ class AliPayGlobal
 
     /**
      * @param $params
-     * @return mixed
      * @throws Exception
+     * @return mixed
      */
     public function payCashier($params)
     {
@@ -151,8 +151,8 @@ class AliPayGlobal
     }
 
     /**
-     * @return Model\NotifyPaymentRequest
      * @throws Exception
+     * @return Model\NotifyPaymentRequest
      */
     public function getNotify()
     {
@@ -196,8 +196,8 @@ class AliPayGlobal
 
     /**
      * @param $params
-     * @return mixed
      * @throws Exception
+     * @return mixed
      */
     public function authConsult($params)
     {
@@ -229,8 +229,8 @@ class AliPayGlobal
 
     /**
      * @param $params
-     * @return mixed
      * @throws Exception
+     * @return mixed
      */
     public function authApplyToken($params)
     {
@@ -255,8 +255,8 @@ class AliPayGlobal
 
     /**
      * @param $params
-     * @return mixed
      * @throws Exception
+     * @return mixed
      */
     public function payAgreement($params)
     {

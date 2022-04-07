@@ -58,8 +58,8 @@ class EntryCodePaymentRequest extends AlipayPayRequest
     }
 
     /**
-     * @return void
      * @throws \Exception
+     * @return void
      */
     public function validate()
     {
@@ -81,8 +81,8 @@ class EntryCodePaymentRequest extends AlipayPayRequest
     /**
      * @param $exp
      * @param $msg
-     * @return void
      * @throws \Exception
+     * @return void
      */
     public function assertTrue($exp, $msg)
     {

@@ -37,8 +37,8 @@ abstract class BaseAlipayClient
 
     /**
      * @param $request
-     * @return mixed
      * @throws Exception
+     * @return mixed
      */
     public function execute($request)
     {
@@ -101,8 +101,8 @@ abstract class BaseAlipayClient
 
     /**
      * @param $request
-     * @return void
      * @throws Exception
+     * @return void
      */
     private function checkRequestParam($request)
     {
@@ -146,8 +146,8 @@ abstract class BaseAlipayClient
      * @param $clientId
      * @param $reqTime
      * @param $reqBody
-     * @return string
      * @throws Exception
+     * @return string
      */
     private function genSignValue($httpMethod, $path, $clientId, $reqTime, $reqBody)
     {
@@ -167,8 +167,8 @@ abstract class BaseAlipayClient
      * @param $rspTime
      * @param $rspBody
      * @param $rspSignValue
-     * @return false|int
      * @throws Exception
+     * @return false|int
      */
     private function checkRspSign($httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue)
     {
